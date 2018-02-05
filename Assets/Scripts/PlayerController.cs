@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour {
 	public float speed = 0.1f;
 	public GameObject projectile;
 	public float projectileSpeed = -1f;
+	public float firingRate = 0.2f;
 	
 	// Use this for initialization
 	void Start () {
@@ -16,12 +17,21 @@ public class PlayerController : MonoBehaviour {
 		
 	}
 	
+	void Fire()
+	{
+		GameObject beam = Instantiate(projectile, transform.position, Quaternion.identity) as GameObject;
+			beam.GetComponent<Rigidbody2D>().velocity = new Vector3(0,projectileSpeed, 0);
+	}
+	
 	void Update()
 	{
-		if(Input.GetKey(KeyCode.Space))
+		if(Input.GetKeyDown(KeyCode.Space))
 		{
-			GameObject beam = Instantiate(projectile, transform.position, Quaternion.identity) as GameObject;
-			beam.GetComponent<Rigidbody2D>().velocity = new Vector3(0,projectileSpeed, 0);
+			InvokeRepeating("Fire", 0.000001f, firingRate);
+		}
+		if(Input.GetKeyUp(KeyCode.Space))
+		{
+			CancelInvoke("Fire");
 		}
 		
 	}
