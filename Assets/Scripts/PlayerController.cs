@@ -20,7 +20,7 @@ public class PlayerController : MonoBehaviour {
 	void FixedUpdate () {
 		
 		
-		print(playerPosition);
+		//print(playerPosition);
 		
 		if (Input.GetKey(KeyCode.LeftArrow))
 		{
