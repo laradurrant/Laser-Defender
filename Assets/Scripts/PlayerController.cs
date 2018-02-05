@@ -7,12 +7,22 @@ public class PlayerController : MonoBehaviour {
 	private Vector3 playerPosition;
 	private Rigidbody2D rb;
 	public float speed = 0.1f;
-
-	
+	public GameObject projectile;
+	public float projectileSpeed = -1f;
 	
 	// Use this for initialization
 	void Start () {
 		//playerPosition = this.transform.position; 
+		
+	}
+	
+	void Update()
+	{
+		if(Input.GetKey(KeyCode.Space))
+		{
+			GameObject beam = Instantiate(projectile, transform.position, Quaternion.identity) as GameObject;
+			beam.GetComponent<Rigidbody2D>().velocity = new Vector3(0,projectileSpeed, 0);
+		}
 		
 	}
 	
