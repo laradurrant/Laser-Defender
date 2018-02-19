@@ -11,6 +11,10 @@ public class PlayerController : MonoBehaviour {
 	public float projectileSpeed = -1f;
 	public float firingRate = 0.2f;
 	private Projectile missile;
+
+	public float playerHealth;
+	
+
 	
 	// Use this for initialization
 	void Start () {
@@ -49,8 +53,23 @@ public class PlayerController : MonoBehaviour {
 		{
 			print("player hit by missile");
 			missile.DestroyProjectile();
-		  //  TakeDamage();
+		    TakeDamage();
 		}
+	}
+	
+	
+	void TakeDamage()
+	{
+
+		playerHealth -= missile.GetDamage();
+		if(playerHealth <= 0)
+		{
+				
+				Destroy(this.gameObject);
+		}
+		
+	
+		
 	}
 	
 	// Update is called once per frame
@@ -74,4 +93,7 @@ public class PlayerController : MonoBehaviour {
 			transform.position = new Vector3(Mathf.Clamp(playerPosition.x, -6F, 6.0F), -3f, 0);
 		}
 	}
+	
+	
+	
 }

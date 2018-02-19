@@ -24,6 +24,21 @@ public class FormationController : MonoBehaviour {
 		}
 	}
 	
+	bool AllMembersDead()
+	{
+		foreach(Transform childPositionGameObject in transform)
+		{
+			if(childPositionGameObject.childCount > 0)
+			{
+				return false;
+			}
+	
+		}
+		
+		return true;
+	}
+	
+	
 	void OnDrawGizmos(){
 		float xmin,xmax,ymin,ymax;
 		xmin = transform.position.x - 0.5f * width;
@@ -38,6 +53,13 @@ public class FormationController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+	
+		if(AllMembersDead())
+		{
+			Debug.Log("Empty Formation");
+			RespawnEnemies();
+		}
+	
 		float formationRightEdge = transform.position.x + 0.5f * width;
 		float formationLeftEdge = transform.position.x - 0.5f * width;
 		if (formationRightEdge > boundaryRightEdge){
@@ -47,5 +69,17 @@ public class FormationController : MonoBehaviour {
 			direction = 1;
 		}
 		transform.position += new Vector3(direction * speed * Time.deltaTime,0,0);
+		
+		
+		
 	}
+	
+	void RespawnEnemies()
+	{
+		foreach( Transform child in transform){
+			GameObject enemy = Instantiate(enemyPrefab, child.transform.position, Quaternion.identity) as GameObject;
+			enemy.transform.parent = child;
+		}
+	}
+	
 }

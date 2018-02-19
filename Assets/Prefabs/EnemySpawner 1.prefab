@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4203690009805992}
   - component: {fileID: 114308395840798276}
   m_Layer: 0
-  m_Name: Top Position
+  m_Name: Top R Position
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -101,7 +101,7 @@ GameObject:
   - component: {fileID: 4483471061489622}
   - component: {fileID: 114863643804848894}
   m_Layer: 0
-  m_Name: Position
+  m_Name: Top L Position
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -253,9 +253,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab3d368a5a6b21e4a8926871d317f235, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefab: {fileID: 1626138449655654, guid: 7eccbde5be57fe24e8676c8cfb384480, type: 2}
+  enemyPrefab: {fileID: 1626138449655654, guid: 7eccbde5be57fe24e8676c8cfb384480,
+    type: 2}
   width: 11
   height: 5
+  speed: 1
+  padding: -0.5
 --- !u!114 &114504081944916152
 MonoBehaviour:
   m_ObjectHideFlags: 1
