@@ -153,7 +153,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.47750473}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -164,7 +164,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 14, y: 1}
+  m_Size: {x: 14, y: 0.77043915}
   m_EdgeRadius: 0
 --- !u!4 &20941071
 Transform:
@@ -406,7 +406,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &963184168
 GameObject:
@@ -540,7 +540,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4101784443518758, guid: 519c59fc04e6e60428bc174694ba36de, type: 2}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 114150369463124526, guid: 519c59fc04e6e60428bc174694ba36de,
         type: 2}
@@ -552,6 +552,11 @@ Prefab:
         type: 2}
       propertyPath: projectileSpeed
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 114150369463124526, guid: 519c59fc04e6e60428bc174694ba36de,
+        type: 2}
+      propertyPath: speed
+      value: 10.15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 519c59fc04e6e60428bc174694ba36de, type: 2}
@@ -706,53 +711,6 @@ Prefab:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6ee1f080a2276c44b96d9e5504484508, type: 2}
-  m_IsPrefabParent: 0
---- !u!1001 &1662715296
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4462507029093694, guid: e7a6398a3eb4def4ab1d3240cd4044c0, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 4.0989656
-      objectReference: {fileID: 0}
-    - target: {fileID: 4462507029093694, guid: e7a6398a3eb4def4ab1d3240cd4044c0, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: -3.0554466
-      objectReference: {fileID: 0}
-    - target: {fileID: 4462507029093694, guid: e7a6398a3eb4def4ab1d3240cd4044c0, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4462507029093694, guid: e7a6398a3eb4def4ab1d3240cd4044c0, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4462507029093694, guid: e7a6398a3eb4def4ab1d3240cd4044c0, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4462507029093694, guid: e7a6398a3eb4def4ab1d3240cd4044c0, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4462507029093694, guid: e7a6398a3eb4def4ab1d3240cd4044c0, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4462507029093694, guid: e7a6398a3eb4def4ab1d3240cd4044c0, type: 2}
-      propertyPath: m_RootOrder
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 61935643663777368, guid: e7a6398a3eb4def4ab1d3240cd4044c0,
-        type: 2}
-      propertyPath: m_IsTrigger
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: e7a6398a3eb4def4ab1d3240cd4044c0, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &1774901578
 GameObject:

@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour {
 	public GameObject projectile;
 	public float projectileSpeed = -1f;
 	public float firingRate = 0.2f;
+	private Projectile missile;
 	
 	// Use this for initialization
 	void Start () {
@@ -20,7 +21,8 @@ public class PlayerController : MonoBehaviour {
 	void Fire()
 	{
 		GameObject beam = Instantiate(projectile, transform.position, Quaternion.identity) as GameObject;
-			beam.GetComponent<Rigidbody2D>().velocity = new Vector3(0,projectileSpeed, 0);
+		beam.GetComponent<Rigidbody2D>().velocity = new Vector3(0,projectileSpeed, 0);
+        Physics2D.IgnoreCollision(beam.GetComponent<Collider2D>(), GetComponent<Collider2D>());
 	}
 	
 	void Update()
@@ -28,12 +30,25 @@ public class PlayerController : MonoBehaviour {
 		if(Input.GetKeyDown(KeyCode.Space))
 		{
 			InvokeRepeating("Fire", 0.000001f, firingRate);
+			
 		}
 		if(Input.GetKeyUp(KeyCode.Space))
 		{
 			CancelInvoke("Fire");
 		}
 		
+	}
+	
+	void OnCollisionEnter2D(Collision2D coll)
+	{
+	
+		
+		missile = coll.gameObject.GetComponent<Projectile>();
+		
+		if(missile)
+		{
+			print("player got hit by a missile");
+		}
 	}
 	
 	// Update is called once per frame
