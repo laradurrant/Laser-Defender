@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 212073192368496782}
   - component: {fileID: 61216997206244182}
   - component: {fileID: 114521295018986164}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: EnemyShip
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -78,9 +78,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57065cc1f3abad6469a9e9ec92a38cf5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectileSpeed: 10
-  firingRate: 100
-  enemyHealth: 100
+  projectileSpeed: 5
+  pFire: 1
+  enemyHealth: 200
   projectile: {fileID: 1879361509767948, guid: 0cce24e93d2754c4ea04e127b190e6c4, type: 2}
 --- !u!212 &212073192368496782
 SpriteRenderer:

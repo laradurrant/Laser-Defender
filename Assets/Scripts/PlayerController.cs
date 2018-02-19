@@ -47,7 +47,9 @@ public class PlayerController : MonoBehaviour {
 		
 		if(missile)
 		{
-			print("player got hit by a missile");
+			print("player hit by missile");
+			missile.DestroyProjectile();
+		  //  TakeDamage();
 		}
 	}
 	

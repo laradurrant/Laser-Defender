@@ -5,7 +5,8 @@ using UnityEngine;
 public class Projectile : MonoBehaviour {
 
 	private float damage = 100f;
-	
+	private Projectile missile;
+		
 	public float GetDamage()
 	{
 		return damage;
@@ -17,4 +18,14 @@ public class Projectile : MonoBehaviour {
 		Destroy(this.gameObject);
 	}
 
+	void OnCollisionEnter2D(Collision2D coll)
+	{
+		missile = coll.gameObject.GetComponent<Projectile>();
+		if(missile)
+		{
+			missile.DestroyProjectile();
+	
+		}
+		
+	}
 }

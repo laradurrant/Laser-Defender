@@ -5,7 +5,9 @@ using UnityEngine;
 public class EnemyDamage : MonoBehaviour {
 
 	public float projectileSpeed;
-	public float firingRate;
+	public float pFire = 10f;
+	private float chance = 0f;
+	
 	public float enemyHealth;
 	
 	public GameObject projectile;
@@ -13,18 +15,38 @@ public class EnemyDamage : MonoBehaviour {
 
 	void Start()
 	{
-		enemyHealth = 100f;
-		firingRate = 20f;
+		enemyHealth = 200f;
+
 	
-		//FireAtPlayer();
+
 	}
 
+	void FixedUpdate()
+	{
+		
+		
+		FireAtPlayer();
+				
+	}
 	
 	void FireAtPlayer()
 	{
-		GameObject beam = Instantiate(projectile, transform.position, Quaternion.identity) as GameObject;
-		beam.GetComponent<Rigidbody2D>().velocity = new Vector3(0,-projectileSpeed, 0);
-	    Physics2D.IgnoreCollision(beam.GetComponent<Collider2D>(), GetComponent<Collider2D>());
+	
+
+		chance = Random.Range(0f, 150f);
+		
+		if(chance < pFire)
+		{
+			Vector3 nudge = transform.position + new Vector3(0,-0.5f,0);
+			
+			GameObject beam = Instantiate(projectile, nudge, Quaternion.identity) as GameObject;
+			beam.GetComponent<Rigidbody2D>().velocity = new Vector3(0,-projectileSpeed, 0);
+			Physics2D.IgnoreCollision(beam.GetComponent<Collider2D>(), GetComponent<Collider2D>());
+			
+		}
+		
+		
+		
 		
 	}
 	
