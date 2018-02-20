@@ -103,7 +103,7 @@ MonoBehaviour:
   projectile: {fileID: 1552593938854422, guid: e7a6398a3eb4def4ab1d3240cd4044c0, type: 2}
   projectileSpeed: 10
   firingRate: 0.2
-  playerHealth: 300
+  playerHealth: 500
 --- !u!212 &212089796702784452
 SpriteRenderer:
   m_ObjectHideFlags: 1

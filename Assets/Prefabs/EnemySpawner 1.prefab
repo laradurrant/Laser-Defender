@@ -277,7 +277,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 1626138449655654, guid: 7eccbde5be57fe24e8676c8cfb384480,
     type: 2}
-  width: 10
+  width: 8
   height: 5
   speed: 3
   padding: 1
