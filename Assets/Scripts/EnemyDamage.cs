@@ -41,6 +41,7 @@ public class EnemyDamage : MonoBehaviour {
 			
 			GameObject beam = Instantiate(projectile, nudge, Quaternion.identity) as GameObject;
 			beam.GetComponent<Rigidbody2D>().velocity = new Vector3(0,-projectileSpeed, 0);
+		//	beam.GetComponent<Rigidbody2D>().rotation = transform.rotation;
 			Physics2D.IgnoreCollision(beam.GetComponent<Collider2D>(), GetComponent<Collider2D>());
 			
 		}
@@ -74,7 +75,7 @@ public class EnemyDamage : MonoBehaviour {
 		enemyHealth -= missile.GetDamage();
 		if(enemyHealth <= 0)
 		{
-				
+				DataStorage.Score += 20;
 				Destroy(this.gameObject);
 		}
 		

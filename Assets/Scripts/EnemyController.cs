@@ -14,18 +14,9 @@ public class EnemyController : MonoBehaviour {
 		
 		
 		
-		if (Input.GetKey(KeyCode.S))
-		{
-           SpawnEnemy();
-		  
-			
-        }
+
 	}
 	
-	void SpawnEnemy()
-	{
-		
-		 print("Spawning Enemy!");
-	}
+
 	
 }
