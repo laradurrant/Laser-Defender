@@ -1,8 +1,7 @@
-﻿
-using UnityEngine;
+﻿using UnityEngine;
 using System.Collections;
 
-public class FormationController : MonoBehaviour {
+public class FormationController2 : MonoBehaviour {
 	public GameObject enemyPrefab;
 	public float width = 10;
 	public float height = 5;

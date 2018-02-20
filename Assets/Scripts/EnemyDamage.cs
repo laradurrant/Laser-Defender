@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyDamage : MonoBehaviour {
 
 	public float projectileSpeed;
-	public float pFire = 10f;
+	public float pFire = 1f;
 	private float chance = 0f;
 	
 	public float enemyHealth;

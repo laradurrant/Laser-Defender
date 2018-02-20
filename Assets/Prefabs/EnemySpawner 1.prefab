@@ -51,7 +51,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4269329774569208}
-  - component: {fileID: 114320876024828332}
+  - component: {fileID: 114700748594869164}
   m_Layer: 0
   m_Name: EnemySpawner 1
   m_TagString: Untagged
@@ -242,23 +242,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e8a3d786613b2445875eedd3f16d278, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114320876024828332
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1502474982861424}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ab3d368a5a6b21e4a8926871d317f235, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 1626138449655654, guid: 7eccbde5be57fe24e8676c8cfb384480,
-    type: 2}
-  width: 11
-  height: 5
-  speed: 1
-  padding: -0.5
 --- !u!114 &114504081944916152
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -281,6 +264,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e8a3d786613b2445875eedd3f16d278, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114700748594869164
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1502474982861424}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0daf67825481880409e1895ca6531368, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyPrefab: {fileID: 1626138449655654, guid: 7eccbde5be57fe24e8676c8cfb384480,
+    type: 2}
+  width: 10
+  height: 5
+  speed: 3
+  padding: 1
+  spawnDelaySeconds: 1
 --- !u!114 &114863643804848894
 MonoBehaviour:
   m_ObjectHideFlags: 1

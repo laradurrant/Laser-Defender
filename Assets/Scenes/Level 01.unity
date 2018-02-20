@@ -476,11 +476,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 114150369463124526, guid: 519c59fc04e6e60428bc174694ba36de,
-        type: 2}
-      propertyPath: playerHealth
-      value: 300
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 519c59fc04e6e60428bc174694ba36de, type: 2}
   m_IsPrefabParent: 0
@@ -607,30 +602,6 @@ Prefab:
     - target: {fileID: 1502474982861424, guid: 6ee1f080a2276c44b96d9e5504484508, type: 2}
       propertyPath: m_Name
       value: FormationController
-      objectReference: {fileID: 0}
-    - target: {fileID: 1789306525910846, guid: 6ee1f080a2276c44b96d9e5504484508, type: 2}
-      propertyPath: m_Name
-      value: Top L Position
-      objectReference: {fileID: 0}
-    - target: {fileID: 1280837733677146, guid: 6ee1f080a2276c44b96d9e5504484508, type: 2}
-      propertyPath: m_Name
-      value: Top R Position
-      objectReference: {fileID: 0}
-    - target: {fileID: 114320876024828332, guid: 6ee1f080a2276c44b96d9e5504484508,
-        type: 2}
-      propertyPath: enemyPrefab
-      value: 
-      objectReference: {fileID: 1626138449655654, guid: 7eccbde5be57fe24e8676c8cfb384480,
-        type: 2}
-    - target: {fileID: 114320876024828332, guid: 6ee1f080a2276c44b96d9e5504484508,
-        type: 2}
-      propertyPath: speed
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114320876024828332, guid: 6ee1f080a2276c44b96d9e5504484508,
-        type: 2}
-      propertyPath: padding
-      value: -0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6ee1f080a2276c44b96d9e5504484508, type: 2}
