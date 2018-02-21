@@ -84,7 +84,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1626138449655654}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -9.637525, y: 2.9906468, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4955479118320962}
@@ -180,6 +180,7 @@ MonoBehaviour:
   enemyHealth: 200
   projectile: {fileID: 1879361509767948, guid: 0cce24e93d2754c4ea04e127b190e6c4, type: 2}
   deadEnemyFX: {fileID: 8300000, guid: 255aca59e6033054e8d6d7df3865f8af, type: 3}
+  shootPlayerFX: {fileID: 8300000, guid: d8d9297fbdf6865488a2613c6e8d68c5, type: 3}
   explosion: {fileID: 198403553603966366}
 --- !u!198 &198403553603966366
 ParticleSystem:
@@ -241,7 +242,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 905603674
+  randomSeed: -1517482367
   InitialModule:
     serializedVersion: 3
     enabled: 1

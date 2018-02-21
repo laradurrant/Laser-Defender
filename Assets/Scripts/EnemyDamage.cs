@@ -14,6 +14,7 @@ public class EnemyDamage : MonoBehaviour {
 	private Projectile missile;
 	
 	public AudioClip deadEnemyFX;
+	public AudioClip shootPlayerFX;
 	
 	public ParticleSystem explosion;
 
@@ -42,7 +43,11 @@ public class EnemyDamage : MonoBehaviour {
 		
 		if(chance < pFire)
 		{
+			AudioSource.PlayClipAtPoint(shootPlayerFX, this.transform.position);
+
 			Vector3 nudge = transform.position + new Vector3(0,-0.5f,0);
+			
+			
 			
 			GameObject beam = Instantiate(projectile, nudge, Quaternion.identity) as GameObject;
 			beam.GetComponent<Rigidbody2D>().velocity = new Vector3(0,-projectileSpeed, 0);
