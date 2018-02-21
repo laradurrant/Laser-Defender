@@ -82,7 +82,7 @@ public class EnemyDamage : MonoBehaviour {
 		if(enemyHealth <= 0)
 		{
 				AudioSource.PlayClipAtPoint(deadEnemyFX, this.transform.position);
-				DataStorage.Score += 20;
+				DataStorage.Score += 50;
 				explosion.Play();
 				Destroy(this.gameObject,0.3f);
 		}
