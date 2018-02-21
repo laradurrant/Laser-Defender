@@ -6,6 +6,8 @@ public class HealthPotion : MonoBehaviour {
 
 	PlayerController player;
 	Projectile missile;
+	
+	public AudioClip healthFX;
 
 	// Use this for initialization
 	void Start () {
@@ -43,7 +45,7 @@ public class HealthPotion : MonoBehaviour {
 		{
 			
 			Debug.Log("collided with player");
-			
+			AudioSource.PlayClipAtPoint(healthFX, this.transform.position);
 			
 			DataStorage.Health += 100f;
 			if(DataStorage.Health > DataStorage.MaxHealth)
@@ -51,6 +53,7 @@ public class HealthPotion : MonoBehaviour {
 				DataStorage.Health = DataStorage.MaxHealth;
 			}
 			
+			DataStorage.Score += 50;
 			
 			Destroy(this.gameObject);
 		}

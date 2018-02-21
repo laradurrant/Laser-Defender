@@ -26,7 +26,7 @@ public class Projectile : MonoBehaviour {
 		missile = coll.gameObject.GetComponent<Projectile>();
 		if(missile)
 		{
-			DataStorage.Score += 5;
+			DataStorage.Score += 10;
 			missile.DestroyProjectile();
 		
 		}
