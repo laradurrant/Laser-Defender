@@ -16,9 +16,9 @@ public class PlayerController : MonoBehaviour {
 	public AudioSource laserFX;
 	public AudioClip deadPlayerFX;
 	public AudioClip damagedPlayerFX;
-	public float playerHealth;
+//	public float playerHealth;
 	public ParticleSystem explosion;
-	private bool isDead = false;	
+	private bool isDead = false;
 	private float currentTime = 0;
 	private float waitTime = 0;
 	
@@ -28,6 +28,7 @@ public class PlayerController : MonoBehaviour {
 		//playerPosition = this.transform.position; 
 		isDead = false;
 		currentTime = 0;
+		
 	}
 	
 	void Fire()
@@ -46,11 +47,16 @@ public class PlayerController : MonoBehaviour {
 		
 		if(isDead && currentTime > waitTime)
 		{
+			
+			
 		  
 			LevelManager levelmanager = GameObject.FindObjectOfType<LevelManager>();
 			levelmanager.LoadLevel ("Lose Screen");
+			
+			isDead = false;
+			DataStorage.Health = 500f;
 		
-	
+			
 		}
 		
 		if(!isDead)
@@ -88,8 +94,8 @@ public class PlayerController : MonoBehaviour {
 	{
 		
 		
-		playerHealth -= missile.GetDamage();
-		if(playerHealth <= 0)
+		DataStorage.Health -= missile.GetDamage();
+		if(DataStorage.Health <= 0)
 		{
 				YouLose();
 				isDead = true;
@@ -127,7 +133,7 @@ public class PlayerController : MonoBehaviour {
 		{
 			if (Input.GetKey(KeyCode.LeftArrow))
 			{
-				print("Left button is held down");
+				//print("Left button is held down");
 				playerPosition = this.transform.position + (Vector3.left * speed * Time.deltaTime);
 				transform.position = new Vector3(Mathf.Clamp(playerPosition.x, -6F, 6.0F), -3f, 0);
 				
@@ -135,7 +141,7 @@ public class PlayerController : MonoBehaviour {
 			
 			if (Input.GetKey(KeyCode.RightArrow))
 			{
-				print("Right button is held down");
+				//print("Right button is held down");
 				playerPosition = this.transform.position + (Vector3.right * speed * Time.deltaTime);
 				transform.position = new Vector3(Mathf.Clamp(playerPosition.x, -6F, 6.0F), -3f, 0);
 			}

@@ -6,6 +6,7 @@ public class Projectile : MonoBehaviour {
 
 	private float damage = 100f;
 	private Projectile missile;
+	public ParticleSystem explosion;
 		
 	public float GetDamage()
 	{
@@ -15,7 +16,9 @@ public class Projectile : MonoBehaviour {
 	public void DestroyProjectile()
 	{
 		print("missile destroyed!!");
-		Destroy(this.gameObject);
+		explosion.Play();
+
+		Destroy(this.gameObject, 0.1f);
 	}
 
 	void OnCollisionEnter2D(Collision2D coll)
@@ -27,6 +30,9 @@ public class Projectile : MonoBehaviour {
 			missile.DestroyProjectile();
 		
 		}
+		
+		
+		
 		
 	}
 }

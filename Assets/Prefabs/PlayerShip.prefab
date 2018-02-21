@@ -11,23 +11,6 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 1170993961598200}
   m_IsPrefabParent: 1
---- !u!1 &1111421859200312
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 4233895832410828}
-  - component: {fileID: 198232644851737250}
-  - component: {fileID: 199967877110247324}
-  m_Layer: 0
-  m_Name: ShipExplosion2
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!1 &1170993961598200
 GameObject:
   m_ObjectHideFlags: 0
@@ -58,6 +41,23 @@ GameObject:
   - component: {fileID: 82131480192012014}
   m_Layer: 0
   m_Name: LaserSoundFX
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1832706002143020
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4325532927188218}
+  - component: {fileID: 198363981078008858}
+  - component: {fileID: 199295194957197330}
+  m_Layer: 0
+  m_Name: ShipExplosion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -105,18 +105,18 @@ Transform:
   m_Children:
   - {fileID: 4043906954885318}
   - {fileID: 4602743125591870}
-  - {fileID: 4233895832410828}
+  - {fileID: 4325532927188218}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &4233895832410828
+--- !u!4 &4325532927188218
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1111421859200312}
+  m_GameObject: {fileID: 1832706002143020}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.02, y: -0.19, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4101784443518758}
@@ -296,13 +296,13 @@ MonoBehaviour:
   deadPlayerFX: {fileID: 8300000, guid: e4de3d266d472194f9e37fbe5badbbc7, type: 3}
   damagedPlayerFX: {fileID: 8300000, guid: 0bb6d507e4dd039488e0aec87f238d71, type: 3}
   playerHealth: 500
-  explosion: {fileID: 198232644851737250}
---- !u!198 &198232644851737250
+  explosion: {fileID: 198363981078008858}
+--- !u!198 &198363981078008858
 ParticleSystem:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1111421859200312}
+  m_GameObject: {fileID: 1832706002143020}
   serializedVersion: 5
   lengthInSec: 2
   simulationSpeed: 1
@@ -357,7 +357,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -2028331202
+  randomSeed: 132881046
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -1259,8 +1259,8 @@ ParticleSystem:
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 0.39705884, g: 0.82535493, b: 1, a: 1}
-        key1: {r: 0.677282, g: 0.45588237, b: 1, a: 1}
+        key0: {r: 1, g: 0.7241379, b: 0, a: 1}
+        key1: {r: 1, g: 0.35172418, b: 0, a: 1}
         key2: {r: 0.14922144, g: 0.2205882, b: 0.16152605, a: 0}
         key3: {r: 0, g: 0, b: 0, a: 0}
         key4: {r: 0, g: 0, b: 0, a: 0}
@@ -3658,13 +3658,13 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
---- !u!199 &199967877110247324
+--- !u!199 &199295194957197330
 ParticleSystemRenderer:
   serializedVersion: 4
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1111421859200312}
+  m_GameObject: {fileID: 1832706002143020}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0

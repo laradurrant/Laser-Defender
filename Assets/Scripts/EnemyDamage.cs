@@ -5,6 +5,8 @@ using UnityEngine;
 public class EnemyDamage : MonoBehaviour {
 
 	public float projectileSpeed;
+	public float itemSpeed;
+	
 	public float pFire = 1f;
 	private float chance = 0f;
 	
@@ -13,16 +15,30 @@ public class EnemyDamage : MonoBehaviour {
 	public GameObject projectile;
 	private Projectile missile;
 	
+	
+	public GameObject potion;
+	private HealthPotion health;
+	
+	
 	public AudioClip deadEnemyFX;
 	public AudioClip shootPlayerFX;
 	
 	public ParticleSystem explosion;
 
+	private float currentTime;
+	private float delayTime;
+	public float recharge;
+	
+	private Vector3 nudge;
 
+	public float dropRate = 20;
+	public float diceRoll;
+	
 	void Start()
 	{
 		enemyHealth = 200f;
-
+		
+		
 	
 
 	}
@@ -30,9 +46,15 @@ public class EnemyDamage : MonoBehaviour {
 	void FixedUpdate()
 	{
 		
+	
+		if(Time.time > delayTime)
+		{
+
+			FireAtPlayer();
+			
+		}
+
 		
-		FireAtPlayer();
-				
 	}
 	
 	void FireAtPlayer()
@@ -43,17 +65,18 @@ public class EnemyDamage : MonoBehaviour {
 		
 		if(chance < pFire)
 		{
+	
+			
 			AudioSource.PlayClipAtPoint(shootPlayerFX, this.transform.position);
 
-			Vector3 nudge = transform.position + new Vector3(0,-0.5f,0);
-			
-			
-			
+			nudge = transform.position + new Vector3(0,-0.5f,0);		
 			GameObject beam = Instantiate(projectile, nudge, Quaternion.identity) as GameObject;
 			beam.GetComponent<Rigidbody2D>().velocity = new Vector3(0,-projectileSpeed, 0);
-		//	beam.GetComponent<Rigidbody2D>().rotation = transform.rotation;
-			Physics2D.IgnoreCollision(beam.GetComponent<Collider2D>(), GetComponent<Collider2D>());
 			
+
+			Physics2D.IgnoreCollision(beam.GetComponent<Collider2D>(), GetComponent<Collider2D>());
+			delayTime = Time.time + recharge;
+		
 		}
 		
 		
@@ -86,15 +109,33 @@ public class EnemyDamage : MonoBehaviour {
 		enemyHealth -= missile.GetDamage();
 		if(enemyHealth <= 0)
 		{
+				diceRoll = Random.Range(0,100);
+				if(diceRoll < dropRate)
+				{
+					DropHealth();
+				}
+				
 				AudioSource.PlayClipAtPoint(deadEnemyFX, this.transform.position);
 				DataStorage.Score += 50;
 				explosion.Play();
+				
+
 				Destroy(this.gameObject,0.3f);
+				
 		}
 		
 	
 		
 	}
 	
+	void DropHealth()
+	{
+		nudge = transform.position + new Vector3(0,-0.5f,0);
+		GameObject health = Instantiate(potion, nudge, Quaternion.identity) as GameObject;
+		
+		health.GetComponent<Rigidbody2D>().velocity = new Vector3(0,-itemSpeed, 0);
+		
+		
+	}
 	
 }
