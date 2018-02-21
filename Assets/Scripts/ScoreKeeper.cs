@@ -9,7 +9,7 @@ public class ScoreKeeper : MonoBehaviour {
 	
 	void Start()
 	{
-		
+		resetScore();
 		
 	}
 
@@ -19,6 +19,10 @@ public class ScoreKeeper : MonoBehaviour {
 
 	}
 	
+	void resetScore()
+	{
+		DataStorage.Score = 0; 
+	}
 	
 
 }

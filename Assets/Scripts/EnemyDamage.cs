@@ -12,6 +12,11 @@ public class EnemyDamage : MonoBehaviour {
 	
 	public GameObject projectile;
 	private Projectile missile;
+	
+	public AudioClip deadEnemyFX;
+	
+	public ParticleSystem explosion;
+
 
 	void Start()
 	{
@@ -62,6 +67,7 @@ public class EnemyDamage : MonoBehaviour {
 		
 		if(missile)
 		{
+			
 			//Debug.Log("hit by missile");
 			missile.DestroyProjectile();
 		    TakeDamage();
@@ -75,8 +81,10 @@ public class EnemyDamage : MonoBehaviour {
 		enemyHealth -= missile.GetDamage();
 		if(enemyHealth <= 0)
 		{
+				AudioSource.PlayClipAtPoint(deadEnemyFX, this.transform.position);
 				DataStorage.Score += 20;
-				Destroy(this.gameObject);
+				explosion.Play();
+				Destroy(this.gameObject,0.3f);
 		}
 		
 	
