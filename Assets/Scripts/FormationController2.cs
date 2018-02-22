@@ -6,6 +6,7 @@ public class FormationController2 : MonoBehaviour {
 	public GameObject enemyPrefab2;
 	public GameObject enemyPrefab3;
 	public GameObject enemyPrefab4;
+	public GameObject enemyBoss;
 	
 	public float width = 10;
 	public float height = 5;
@@ -21,19 +22,23 @@ public class FormationController2 : MonoBehaviour {
 	private int secondWave;
 	private int thirdWave;
 	private int fourthWave;
+	private int bossWave;
 	
 	private bool winConditionsMet = false;
 	private float timeDelay = 0;
 	
 	private LevelManager levelmanager;
 	
+	GameObject boss;
+	
 	// Use this for initialization
 	void Start () {
 		numRounds = 1;
-		firstWave = 3;
-		secondWave = 5;
-		thirdWave = 8;
-		fourthWave = 9;
+		firstWave = 2;
+		secondWave = 3;
+		thirdWave = 6;
+		fourthWave = 7;
+		bossWave = 8;
 
 		
 		Camera camera = Camera.main;
@@ -103,6 +108,12 @@ public class FormationController2 : MonoBehaviour {
 					numRounds = numRounds + 1;
 					SpawnFourthUntilFull();
 				}
+				else if(numRounds < bossWave)
+				{
+					print("Final wave");
+					numRounds = numRounds + 1;
+					SpawnBoss();
+				}
 				else if(numRounds >= fourthWave)
 				{
 					print("win conditions met");
@@ -123,6 +134,14 @@ public class FormationController2 : MonoBehaviour {
 		}
 	}
 
+	void SpawnBoss()
+	{
+	//	Transform freePos = NextFreePosition();
+	    Vector3 pos = new Vector3(0,3f,0);
+		boss = Instantiate(enemyBoss, pos, Quaternion.identity) as GameObject;
+	//	boss.transform.parent = freePos;
+	}
+	
 	void SpawnUntilFull(){
 		
 		Transform freePos = NextFreePosition();
@@ -197,6 +216,12 @@ public class FormationController2 : MonoBehaviour {
 	}
 
 	bool AllMembersAreDead(){
+		
+		if(boss)
+		{
+			return false;
+		}
+		
 		foreach(Transform position in transform){
 			if(position.childCount > 0){
 				return false;

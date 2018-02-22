@@ -283,6 +283,7 @@ MonoBehaviour:
     type: 2}
   enemyPrefab4: {fileID: 1034949710117710, guid: ec177f2e17475fa4da89f81d288475f8,
     type: 2}
+  enemyBoss: {fileID: 1843710613932868, guid: dbc47f39916e57946b424facbf22df81, type: 2}
   width: 8
   height: 5
   speed: 3

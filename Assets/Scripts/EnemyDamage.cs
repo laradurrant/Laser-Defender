@@ -36,6 +36,8 @@ public class EnemyDamage : MonoBehaviour {
 	
 	public int score;
 	
+	public bool bossMode = false;
+	
 	void Start()
 	{
 	
@@ -67,7 +69,8 @@ public class EnemyDamage : MonoBehaviour {
 		if(chance < pFire)
 		{
 	
-			
+			if(!bossMode)
+			{
 			AudioSource.PlayClipAtPoint(shootPlayerFX, this.transform.position);
 
 			nudge = transform.position + new Vector3(0,-0.5f,0);		
@@ -77,6 +80,29 @@ public class EnemyDamage : MonoBehaviour {
 
 			Physics2D.IgnoreCollision(beam.GetComponent<Collider2D>(), GetComponent<Collider2D>());
 			delayTime = Time.time + recharge;
+			}
+			else
+			{
+				AudioSource.PlayClipAtPoint(shootPlayerFX, this.transform.position);
+
+				nudge = transform.position + new Vector3(0,-0.5f,0);		
+				GameObject beam = Instantiate(projectile, nudge, Quaternion.identity) as GameObject;
+				beam.GetComponent<Rigidbody2D>().velocity = new Vector3(0,-projectileSpeed, 0);
+				
+				nudge = transform.position + new Vector3(-1.3f,-0.5f,0);
+				GameObject beam2 = Instantiate(projectile, nudge, Quaternion.identity) as GameObject;
+				beam2.GetComponent<Rigidbody2D>().velocity = new Vector3(0,-projectileSpeed, 0);
+				
+				nudge = transform.position + new Vector3(1.3f,-0.5f,0);
+				GameObject beam3 = Instantiate(projectile, nudge, Quaternion.identity) as GameObject;
+				beam3.GetComponent<Rigidbody2D>().velocity = new Vector3(0,-projectileSpeed, 0);
+
+				Physics2D.IgnoreCollision(beam.GetComponent<Collider2D>(), GetComponent<Collider2D>());
+				delayTime = Time.time + recharge;
+				
+			}
+			
+			
 		
 		}
 		
