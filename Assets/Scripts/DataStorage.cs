@@ -6,8 +6,8 @@ public static class DataStorage
 {
 
 	private static int score = 0;
-	private static float health = 700f;
-	private static float maxhealth = 700f;
+	private static float health = 500f;
+	private static float maxhealth = 500f;
 	
     public static int Score
     {
