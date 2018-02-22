@@ -169,7 +169,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1502474982861424}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.96, z: 0}
+  m_LocalPosition: {x: 0, y: 2.25, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4233930672038304}
@@ -276,6 +276,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 1626138449655654, guid: 7eccbde5be57fe24e8676c8cfb384480,
+    type: 2}
+  enemyPrefab2: {fileID: 1868238146574798, guid: d260d99b81140c3448ff093f37a7b65f,
+    type: 2}
+  enemyPrefab3: {fileID: 1849217875339334, guid: 2e2b15884203dd2418a6da2890468122,
+    type: 2}
+  enemyPrefab4: {fileID: 1034949710117710, guid: ec177f2e17475fa4da89f81d288475f8,
     type: 2}
   width: 8
   height: 5

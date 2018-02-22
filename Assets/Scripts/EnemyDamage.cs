@@ -32,12 +32,13 @@ public class EnemyDamage : MonoBehaviour {
 	private Vector3 nudge;
 
 	public float dropRate = 20;
-	public float diceRoll;
+	private float diceRoll;
+	
+	public int score;
 	
 	void Start()
 	{
-		enemyHealth = 200f;
-		
+	
 		
 	
 
@@ -84,6 +85,7 @@ public class EnemyDamage : MonoBehaviour {
 		
 	}
 	
+
 	void OnCollisionEnter2D(Collision2D coll)
     {
 	
@@ -116,7 +118,7 @@ public class EnemyDamage : MonoBehaviour {
 				}
 				
 				AudioSource.PlayClipAtPoint(deadEnemyFX, this.transform.position);
-				DataStorage.Score += 50;
+				DataStorage.Score += score;
 				explosion.Play();
 				
 

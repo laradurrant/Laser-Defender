@@ -11,6 +11,7 @@ public class ShowScore : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		highscore = DataStorage.Score;
+		DataStorage.Health = 500f;
 	}
 	
 	// Update is called once per frame
