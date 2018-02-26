@@ -34,8 +34,8 @@ public class FormationController2 : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		numRounds = 1;
-		firstWave = 2;
-		secondWave = 3;
+		firstWave = 3;
+		secondWave = 4;
 		thirdWave = 6;
 		fourthWave = 7;
 		bossWave = 8;

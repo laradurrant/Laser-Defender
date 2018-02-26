@@ -226,8 +226,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 15.200001, y: 121.9}
-  m_SizeDelta: {x: 614.2, y: 118.5}
+  m_AnchoredPosition: {x: 15.200001, y: 20.3}
+  m_SizeDelta: {x: 614.2, y: 321.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &612459424
 MonoBehaviour:
@@ -250,18 +250,21 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: c284b465294b30d4cad6a79ba54b9c53, type: 3}
-    m_FontSize: 30
+    m_FontSize: 27
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
     m_MaxSize: 40
-    m_Alignment: 1
+    m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Special thanks to everyone at the Unity course on Udemy!
+  m_Text: "Font: Transformers Movie from Dafont\n\nGraphics: Kenney \nCreative Commons
+    1.0 Universal License\nhttp://kenney.nl/assets/space-shooter-redux\n\nMusic: Unity
+    Asset Store & Tutorial\n\nSpecial thanks to everyone at the Unity course on Udemy
+    for your awesome feedback!"
 --- !u!222 &612459425
 CanvasRenderer:
   m_ObjectHideFlags: 0
